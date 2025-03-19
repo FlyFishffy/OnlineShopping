@@ -27,3 +27,4 @@
 ### 二、注意事项：
 
 1. service层中最好不要返回Result
+2. 接口设计使用RESTful风格
