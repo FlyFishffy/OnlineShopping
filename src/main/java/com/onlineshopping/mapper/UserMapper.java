@@ -1,7 +1,6 @@
 package com.onlineshopping.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.onlineshopping.dto.UserDTO;
+
 import com.onlineshopping.entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

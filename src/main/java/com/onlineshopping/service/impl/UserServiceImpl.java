@@ -1,7 +1,6 @@
 package com.onlineshopping.service.impl;
 
 import cn.hutool.core.util.RandomUtil;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.onlineshopping.dto.LoginFormDTO;
 import com.onlineshopping.dto.Result;
 import com.onlineshopping.entity.User;

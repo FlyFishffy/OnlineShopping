@@ -1,6 +1,5 @@
 package com.onlineshopping.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.onlineshopping.dto.LoginFormDTO;
 import com.onlineshopping.dto.Result;
 import com.onlineshopping.entity.User;
