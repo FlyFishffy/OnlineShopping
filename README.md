@@ -28,3 +28,4 @@
 
 1. service层中最好不要返回Result
 2. 接口设计使用RESTful风格
+3. 接口文档地址：/doc.html
