@@ -1,8 +1,7 @@
 package com.onlineshopping.controller.buyer;
 
 
-import com.onlineshopping.dto.Result;
-import com.onlineshopping.dto.orderDTO;
+import com.onlineshopping.dto.*;
 import com.onlineshopping.service.OrdersService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -57,7 +56,10 @@ public class OrderController {
     @ApiOperation("查看订单详情")
     public Result orderView(@PathVariable("orderid") int orderId) {
         //Todo
-        //Order orderinfo = ordersService.getOrderById(orderId);
-        return Result.ok();
+        log.info("查询订单: {}", orderId);
+        orderInfo orderinfo = ordersService.getOrderById(orderId);
+        log.info("orderinfo: {}", orderinfo);
+        return Result.ok(orderinfo);
+
     }
 }
