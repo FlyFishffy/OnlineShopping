@@ -35,7 +35,8 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             // 5.不存在，创建新用户并保存
             user = createUserWithPhone(phone);
-            return Result.ok(user.getId());
+            session.setAttribute("user", user);
+            return Result.ok();
         }
 
         // 5.存在，校验密码
