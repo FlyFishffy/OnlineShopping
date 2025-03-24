@@ -2,6 +2,7 @@ package com.onlineshopping.controller.buyer;
 
 
 import com.onlineshopping.dto.*;
+import com.onlineshopping.entity.Product;
 import com.onlineshopping.service.OrdersService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -22,16 +23,24 @@ public class OrderController {
 
     /**
      * 用于下单
-     * @param order
+     * @param orderinforequest
+     *int buyerId
+     *int addressId
+     *products:[
+     * {
+     *     int productId,
+     *     int quantity
+     * }
+     * ]
      * @return
      * 创建订单接口
      */
     @PostMapping("/ordering")
     @ApiOperation("创建订单")
-    public Result createOrder(@RequestBody orderDTO order) {
+    public Result createOrder(@RequestBody  orderInfo orderinforequest) {
         //Todo
-        // ordersService.createOrder(order);
-        return Result.ok();
+        orderInfo ordercreate = ordersService.createOrder(orderinforequest);
+        return Result.ok(ordercreate);
     }
     /**
      * 获取订单历史列表接口

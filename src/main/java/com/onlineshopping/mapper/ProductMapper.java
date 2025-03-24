@@ -33,6 +33,6 @@ public interface ProductMapper {
      * @param productId
      * @return
      */
-    @Select("select (seller_id, name, description, price, category_id) from products where product_id = #{productId}")
+    @Select("select seller_id, name, description, price, category_id from products where product_id = #{productId}")
     ProductDTO getProductById(Integer productId);
 }

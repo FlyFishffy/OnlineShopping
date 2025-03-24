@@ -10,11 +10,12 @@ import java.util.List;
 @Data
 public class orderInfo {
     private int orderId;
+    private int buyerId;
     private BigDecimal totalAmount;
     private String status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
+    private int addressId;
     private List<orderItemsDTO> products;
 
 }
