@@ -1,7 +1,9 @@
 package com.onlineshopping.config;
 
-import com.onlineshopping.utils.LoginInterceptor;
+import com.onlineshopping.interceptor.AuthLoginInterceptor;
+import com.onlineshopping.interceptor.LoginInterceptor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
@@ -17,6 +19,9 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Slf4j
 public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
+    @Autowired
+    private AuthLoginInterceptor authLoginInterceptor;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 登录拦截器
@@ -26,6 +31,8 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
                         // "/user/login"
 
                 );
+        registry.addInterceptor(authLoginInterceptor)
+                .excludePathPatterns("/**");
     }
 
     /**

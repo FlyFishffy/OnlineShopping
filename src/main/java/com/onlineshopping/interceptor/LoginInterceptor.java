@@ -1,6 +1,7 @@
-package com.onlineshopping.utils;
+package com.onlineshopping.interceptor;
 
 import com.onlineshopping.dto.UserDTO;
+import com.onlineshopping.utils.UserHolder;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;

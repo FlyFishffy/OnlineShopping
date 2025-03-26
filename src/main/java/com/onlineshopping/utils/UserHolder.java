@@ -1,12 +1,12 @@
 package com.onlineshopping.utils;
 
-import com.onlineshopping.dto.UserDTO;
 
+import com.onlineshopping.dto.UserDTO;
 
 public class UserHolder {
     private static final ThreadLocal<UserDTO> tl = new ThreadLocal<>();
 
-    public static void saveUser(UserDTO user){
+    public static void saveUser(UserDTO user) {
         tl.set(user);
     }
 
